@@ -1,11 +1,24 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import '../assets/css/style.css'
-
+import {Link} from 'react-router-dom'
 function Header() {
-    return (
-        <div>
-            <div className="header-main header-style1">
-                {/* <div className="col-xl-4 col-lg-4 col-sm-8 col-5">
+	const [isLogin,setIsLogin]=useState(false)
+	const getUserDetail=()=>{
+	  if(localStorage.getItem('UserId')!==null && localStorage.getItem('email')!==null){
+		setIsLogin(true);
+		console.log('true login');
+	  }else{
+		 setIsLogin(false);
+		  console.log('false login');
+	  }
+	}
+	useEffect(()=>{
+		getUserDetail();
+	},[]);
+	return (
+		<div>
+			<div className="header-main header-style1">
+				{/* <div className="col-xl-4 col-lg-4 col-sm-8 col-5">
 					<div className="top-bar-right">
 						<ul className="custom">
 							<li>
@@ -23,56 +36,72 @@ function Header() {
 						</ul>
 					</div>
 				</div> */}
-                
-			<div className="horizontal-header clearfix">
-				<div className="container">
-					<a className="animated-arrow" id="horizontal-navtoggle"><span></span></a>
-					<a className="smllogo mobile-logo" href="index.html"></a>
-					<a className="callusbtn" href="tel:245-6325-3256"><i aria-hidden="true" className="fa fa-phone"></i></a>
+
+				<div className="horizontal-header clearfix">
+					<div className="container">
+						<a className="animated-arrow" id="horizontal-navtoggle"><span></span></a>
+						<a className="smllogo mobile-logo" href="index.html"></a>
+						<a className="callusbtn" href="tel:245-6325-3256"><i aria-hidden="true" className="fa fa-phone"></i></a>
+					</div>
 				</div>
-			</div>
-			
-			<div className="sticky">
-				<div className="horizontal-main clearfix">
-					<div className="horizontal-mainwrapper container clearfix">
-						{/* add logo here */}
-						<nav className="horizontalMenu clearfix d-md-flex">
-							<ul className="horizontalMenu-list">
-								<li aria-haspopup="true">
-									<a href="#">Home <span className="fe fe-chevron-down"></span></a>
-									
-								</li>
-								<li aria-haspopup="true">
-									<a href="#">About Us</a>
-								</li>
-								<li aria-haspopup="true">
-									<a href="#">Blog <span className="fe fe-chevron-down"></span></a>
-								</li>
-								<li aria-haspopup="true">
-									<a href="#">Contact Us </a>
-								</li>
-								<li aria-haspopup="true">
-									<a href="#">Dashboard <span class="fe fe-chevron-down"></span></a>
-									<ul class="sub-menu">
-										<li aria-haspopup="true"><a href="#">My Account</a></li>
-										<li aria-haspopup="true"><a href="#">Logout</a></li>
-										
-									</ul>
-								</li>
-								<li aria-haspopup="true" className="d-lg-none mt-5 pb-5 mt-lg-0">
+
+				<div className="sticky">
+					<div className="horizontal-main clearfix">
+						<div className="horizontal-mainwrapper container clearfix">
+							{/* add logo here */}
+							<nav className="horizontalMenu clearfix d-md-flex">
+								<ul className="horizontalMenu-list">
+									<li aria-haspopup="true">
+										{/*<a href="#">Home <span className="fe fe-chevron-down"></span></a>*/}
+										<Link to={'/home'}>Home</Link>
+
+									</li>
+									<li aria-haspopup="true">
+										<a href="#">About Us</a>
+									</li>
+									<li aria-haspopup="true">
+										<a href="#">Blog <span className="fe fe-chevron-down"></span></a>
+									</li>
+									<li aria-haspopup="true">
+										<a href="#">Contact Us </a>
+									</li>
+									{isLogin?
+									(<li aria-haspopup="true">
+										<a href="#">Dashboard <span className="fe fe-chevron-down"></span></a>
+										<ul className="sub-menu">
+											<li aria-haspopup="true">
+												{/*<a href="#">My Account</a>*/}
+												<Link to={"/profile"} >My Account</Link>
+											</li>
+											<li aria-haspopup="true">
+												<Link to={"/logout"}>Logout</Link>
+												{/*<a href="#">Logout</a>*/}</li>
+
+										</ul>
+									</li>
+										)
+									:(
+										<li aria-haspopup="true">
+											<Link to={"/login"}>Login</Link>
+										</li>
+									)
+									}
+
+									<li aria-haspopup="true" className="d-lg-none mt-5 pb-5 mt-lg-0">
 									<span>
 										<a href="ad-posts.html" className="btn btn-secondary btn-block mb-lg-0"><i className="icon icon-plus mr-1 text-white"></i>Add Your Post</a>
 									</span>
-								</li>
-							</ul>
-						</nav>
+									</li>
+								</ul>
+							</nav>
+						</div>
 					</div>
 				</div>
 			</div>
-            </div>
 
-        </div>
-    )
+		</div>
+	)
 }
+
 
 export default Header
