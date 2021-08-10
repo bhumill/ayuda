@@ -14,10 +14,10 @@ function Footer() {
 							<div className="col-lg-3 col-md-12">
 								<h6>About</h6>
 								<hr className="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto" />
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate essequasi, veritatis totam voluptas nostrum.Lorem ipsum dolor sit amet, consectetur </p>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum .</p>
+								{/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate essequasi, veritatis totam voluptas nostrum.Lorem ipsum dolor sit amet, consectetur </p>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum .</p> */}
 							</div>
-							<div className="col-lg-2 col-md-12">
+							<div className="col-lg-4 col-md-12">
 								<h6>Resources</h6>
 								<hr className="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto" />
 								<ul className="list-unstyled mb-0">
@@ -29,7 +29,7 @@ function Footer() {
 									<li><a href="javascript:;">Terms and Conditions</a></li>
 								</ul>
 							</div>
-							<div className="col-lg-3 col-md-12">
+							<div className="col-lg-4 col-md-12">
 								<h6>Contact</h6>
 								<hr className="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto" />
 								<ul className="list-unstyled mb-0">
@@ -45,22 +45,8 @@ function Footer() {
 										<a href="#"><i className="fa fa-print mr-3 text-primary"></i> + 01 234 567 89</a>
 									</li>
 								</ul>
-								<ul className="social-icons mb-0 mt-2">
-									<li className="text-center">
-										<a className="social-icon" href=""><i className="fa fa-facebook"></i></a>
-									</li>
-									<li className="text-center">
-										<a className="social-icon" href=""><i className="fa fa-twitter"></i></a>
-									</li>
-									<li className="text-center">
-										<a className="social-icon" href=""><i className="fa fa-linkedin"></i></a>
-									</li>
-									<li className="text-center">
-										<a className="social-icon" href=""><i className="fa fa-google-plus"></i></a>
-									</li>
-								</ul>
 							</div>
-							<div className="col-lg-4 col-md-12">
+							{/* <div className="col-lg-4 col-md-12">
 								<h6>Subscribe</h6>
 								<hr className="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto" />
 								<div className="clearfix"></div>
@@ -80,7 +66,7 @@ function Footer() {
 									<li><a href="javascript:;"><i className="fa fa-cc-mastercard text-muted" aria-hidden="true"></i></a></li>
 									<li><a href="javascript:;"><i className="fa fa-cc-paypal text-muted" aria-hidden="true"></i></a></li>
 								</ul>
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</div>
